@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  a.active {
+    font-weight: bold;
+    color: #0056b3;
+  }

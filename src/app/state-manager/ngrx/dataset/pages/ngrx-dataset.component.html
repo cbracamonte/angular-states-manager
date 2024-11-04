@@ -1,0 +1,6 @@
+<ng-container *ngIf="datasets$ | async as datasets">
+  <ng-container *ngFor="let dataset of datasets">
+    <h1>{{ dataset.title }}</h1>
+    <p>{{ dataset.body }}</p>
+  </ng-container>
+</ng-container>
