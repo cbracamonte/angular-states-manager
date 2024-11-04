@@ -23,6 +23,9 @@
     "@ngrx/signals": "18.1.1",
     "@ngrx/store": "^18.1.1",
     "@ngrx/store-devtools": "^18.1.1",
+    "@ngxs/devtools-plugin": "^18.1.4",
+    "@ngxs/logger-plugin": "^18.1.4",
+    "@ngxs/store": "^18.1.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"

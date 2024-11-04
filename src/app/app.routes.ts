@@ -15,4 +15,11 @@ export const routes: Routes = [
         './state-manager/ngrx-signals/dataset/ngrx-signal-dataset.module'
       ).then((m) => m.NgrxSignalDatasetModule),
   },
+  {
+    path: 'ngxs',
+    loadChildren: () =>
+      import('./state-manager/ngxs/dataset/ngxs-dataset.module').then(
+        (m) => m.NgxsDatasetModule
+      ),
+  }
 ];

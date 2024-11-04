@@ -47,6 +47,15 @@ importers:
       '@ngrx/store-devtools':
         specifier: ^18.1.1
         version: 18.1.1(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(@ngrx/store@18.1.1(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(rxjs@7.8.1)
+      '@ngxs/devtools-plugin':
+        specifier: ^18.1.4
+        version: 18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(@ngxs/store@18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(rxjs@7.8.1)
+      '@ngxs/logger-plugin':
+        specifier: ^18.1.4
+        version: 18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(@ngxs/store@18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(rxjs@7.8.1)
+      '@ngxs/store':
+        specifier: ^18.1.4
+        version: 18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
       rxjs:
         specifier: ~7.8.0
         version: 7.8.1
@@ -1374,6 +1383,26 @@ packages:
       '@angular/compiler-cli': ^18.0.0
       typescript: '>=5.4 <5.6'
       webpack: ^5.54.0
+
+  '@ngxs/devtools-plugin@18.1.4':
+    resolution: {integrity: sha512-vACMGNT8FGDw5W0wrI+yGruk5uZbAYL2rAHVpAoKxQoofMTQUjXp29zuzpyZYe8/MvnwoC6qESp+wHYPZpvN7w==}
+    peerDependencies:
+      '@angular/core': '>=16.0.0 <19.0.0'
+      '@ngxs/store': ^18.1.4 || ^18.1.4-dev
+      rxjs: '>=6.5.5'
+
+  '@ngxs/logger-plugin@18.1.4':
+    resolution: {integrity: sha512-PP9wjCLR17/szW7zpZ4lHPEqt/OBCDrqzwO93IgOiwz1CmmA1jJut5uz815zlDqj9Gl/MYJ6K0QAvh73W8WAfQ==}
+    peerDependencies:
+      '@angular/core': '>=16.0.0 <19.0.0'
+      '@ngxs/store': ^18.1.4 || ^18.1.4-dev
+      rxjs: '>=6.5.5'
+
+  '@ngxs/store@18.1.4':
+    resolution: {integrity: sha512-a+iJPMoAXU9R8QGvpc2og8WWzq7xl5sF5QRsjGMPne4SbX8b+tKiQV3ZaKInVVOFiTd9e5/00pYkSjnrakEsQQ==}
+    peerDependencies:
+      '@angular/core': '>=16.0.0 <19.0.0'
+      rxjs: '>=7.0.0'
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -5751,6 +5780,26 @@ snapshots:
       '@angular/compiler-cli': 18.2.10(@angular/compiler@18.2.10(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.5.4)
       typescript: 5.5.4
       webpack: 5.94.0(esbuild@0.23.0)
+
+  '@ngxs/devtools-plugin@18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(@ngxs/store@18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(rxjs@7.8.1)':
+    dependencies:
+      '@angular/core': 18.2.10(rxjs@7.8.1)(zone.js@0.14.10)
+      '@ngxs/store': 18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.8.1
+
+  '@ngxs/logger-plugin@18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(@ngxs/store@18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(rxjs@7.8.1)':
+    dependencies:
+      '@angular/core': 18.2.10(rxjs@7.8.1)(zone.js@0.14.10)
+      '@ngxs/store': 18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.8.1
+
+  '@ngxs/store@18.1.4(@angular/core@18.2.10(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)':
+    dependencies:
+      '@angular/core': 18.2.10(rxjs@7.8.1)(zone.js@0.14.10)
+      rxjs: 7.8.1
+      tslib: 2.8.1
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
