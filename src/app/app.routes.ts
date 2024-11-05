@@ -21,5 +21,12 @@ export const routes: Routes = [
       import('./state-manager/ngxs/dataset/ngxs-dataset.module').then(
         (m) => m.NgxsDatasetModule
       ),
+  },
+  {
+    path: 'rx-state',
+    loadChildren: () =>
+      import('./state-manager/rx-state/dataset/rx-state-dataset.module').then(
+        (m) => m.RxStateDatasetModule
+      ),
   }
 ];

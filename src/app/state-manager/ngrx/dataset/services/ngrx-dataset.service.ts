@@ -8,6 +8,7 @@ import { DatasetResponseDto } from '../../../../common/api/dto/dataset-response.
   providedIn: 'root',
 })
 export class NgrxDatasetService {
+  loading$: Observable<boolean> = this.ngrxDatasetStoreService.loading$;
   constructor(
     private readonly ngrxDatasetStoreService: NgrxDatasetStoreService
   ) {

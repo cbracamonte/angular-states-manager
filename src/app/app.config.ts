@@ -16,8 +16,16 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
+//RxState Imports
+import {
+  provideRxStateConfig,
+  withScheduler,
+  withSyncScheduler,
+} from '@rx-angular/state';
+
 // App Imports
 import { routes } from './app.routes';
+import { asapScheduler } from 'rxjs';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -34,5 +42,9 @@ export const appConfig: ApplicationConfig = {
       NgxsLoggerPluginModule.forRoot()
     ),
     provideStoreDevtools({ maxAge: 25, logOnly: isDevMode() }),
+    /* RxState
+     To more information about RxState - Scheduler, check the official documentation: https://www.rx-angular.io/docs/state/getting-started#scheduler
+    */
+    provideRxStateConfig(withScheduler(asapScheduler)),
   ],
 };

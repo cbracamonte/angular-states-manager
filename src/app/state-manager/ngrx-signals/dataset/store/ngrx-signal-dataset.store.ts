@@ -1,4 +1,4 @@
-import { computed, inject, Injectable } from '@angular/core';
+import { computed, inject } from '@angular/core';
 import {
   signalStore,
   withState,
@@ -10,7 +10,7 @@ import {
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { DatasetApiService } from '../../../../common/api/services/dataset.api.service';
 import { DatasetResponseDto } from '../../../../common/api/dto/dataset-response.dto';
-import { map, of, pipe, switchMap, tap } from 'rxjs';
+import { catchError, map, of, pipe, switchMap, tap } from 'rxjs';
 import { DatasetMapper } from '../../../../common/api/mappers/dataset.mapper';
 
 export const NgrxSignalDatasetStore = signalStore(
@@ -20,16 +20,24 @@ export const NgrxSignalDatasetStore = signalStore(
     isLoading: false,
     error: null as Error | null,
   }),
-  withComputed(({ datasets }) => ({
-    datasets: computed(() => datasets()),
-  })),
   withMethods((store) => ({
     getDatasets: rxMethod<DatasetMapper[]>(
       pipe(
-        switchMap(() => inject(DatasetApiService).getDatasets().pipe(
-          map(mapperDataset)
-        )),
-        tap((datasets) => patchState(store, { datasets }))
+        switchMap(() => {
+          patchState(store, { isLoading: true });
+          return inject(DatasetApiService)
+            .getDatasets()
+            .pipe(
+              map(mapperDataset),
+              tap((datasets) =>
+                patchState(store, { datasets, isLoading: false })
+              ),
+              catchError((error) => {
+                patchState(store, { error, isLoading: false });
+                return error;
+              })
+            );
+        })
       )
     ),
   })),
@@ -39,7 +47,6 @@ export const NgrxSignalDatasetStore = signalStore(
     },
   })
 );
-
 
 function mapperDataset(dataset: DatasetResponseDto[]): DatasetMapper[] {
   return dataset.map((dataset) => ({

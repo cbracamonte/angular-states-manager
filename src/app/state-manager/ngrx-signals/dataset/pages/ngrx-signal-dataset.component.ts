@@ -7,6 +7,6 @@ import { NgrxSignalDatasetStore } from '../store/ngrx-signal-dataset.store';
 })
 export class NgrxSignalDatasetComponent {
 
-  datasetsStore = inject(NgrxSignalDatasetStore) as any;
+  datasetsStore = inject(NgrxSignalDatasetStore);
 
 }

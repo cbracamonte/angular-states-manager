@@ -14,4 +14,8 @@ export class DatasetApiService {
   getDatasets(): Observable<DatasetResponseDto[]> {
     return this.http.get<DatasetResponseDto[]>(this.apiUrl);
   }
+
+  getDataset(id: number): Observable<DatasetResponseDto> {
+    return this.http.get<DatasetResponseDto>(`${this.apiUrl}/${id}`);
+  }
 }

@@ -20,3 +20,6 @@ export const ngrxIsLoadingSelector = createSelector(
 export const ngrxDataset = createSelector(ngrxDatasetSelector, selectAll);
 
 export const ngrxErrorSelector = createSelector(ngrxDatasetSelector, ngrxDatasetError);
+
+export const ngrxLoading = createSelector(ngrxDatasetSelector, ngrxDatasetIsLoading);
+

@@ -13,6 +13,11 @@ export class NgxsDatasetStoreService {
   ngxsDataset$: Observable<DatasetResponseDto[]> = this.store.select(
     NgxsDatasetSelectors.getDatasets
   );
+
+  isLoading$: Observable<boolean> = this.store.select(
+    NgxsDatasetSelectors.isLoading
+  );
+
   constructor(private store: Store) {}
 
   getDatasets(): void {

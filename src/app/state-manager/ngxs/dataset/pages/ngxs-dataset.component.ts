@@ -11,6 +11,7 @@ import { DatasetMapper } from '../../../../common/api/mappers/dataset.mapper';
 })
 export class NgxsDatasetComponent implements OnInit {
   datasets$!: Observable<DatasetMapper[]>;
+  isLoading$: Observable<boolean> = this.ngxsDatasetService.isLoading$;
 
   constructor(private ngxsDatasetService: NgxsDatasetService) {}
 

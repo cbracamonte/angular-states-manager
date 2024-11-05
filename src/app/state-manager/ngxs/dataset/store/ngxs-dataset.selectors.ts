@@ -6,4 +6,14 @@ export class NgxsDatasetSelectors {
   static getDatasets(state: NgxsDatasetStateModel) {
     return state.datasets;
   }
+
+  @Selector([NgxsDatasetState])
+  static isLoading(state: NgxsDatasetStateModel) {
+    return state.isLoading;
+  }
+
+  @Selector([NgxsDatasetState])
+  static getError(state: NgxsDatasetStateModel) {
+    return state.error;
+  }
 }

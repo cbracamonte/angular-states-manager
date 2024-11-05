@@ -8,6 +8,8 @@ import { NgxsDatasetStoreService } from '../store/ngxs-dataset-store.service';
   providedIn: 'root',
 })
 export class NgxsDatasetService {
+  isLoading$: Observable<boolean> = this.ngxsDatasetStoreService.isLoading$;
+  
   constructor(
     private readonly ngxsDatasetStoreService: NgxsDatasetStoreService
   ) {

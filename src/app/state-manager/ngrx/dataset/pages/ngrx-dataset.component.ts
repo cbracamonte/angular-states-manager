@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class NgrxDatasetComponent implements OnInit {
   datasets$!: Observable<DatasetMapper[]>;
+  loading$ = this.ngrxDatasetService.loading$;
 
   constructor(private readonly ngrxDatasetService: NgrxDatasetService) {}
 
